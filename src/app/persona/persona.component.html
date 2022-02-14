@@ -1,0 +1,46 @@
+<p-table [value]="empleados">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>cedula</th>
+            <th>nombres</th>
+            <th>apellidos</th>
+            <th>email</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-empleado>
+        <tr>
+            <td>{{empleado.cedula}}</td>
+            <td>{{empleado.nombres}}</td>
+            <td>{{empleado.apellidos}}</td>
+            <td>{{empleado.email}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<h1>Resultado Búsqueda</h1>
+<p-dropdown [options]="filtros" (onChange)="hacerBusqueda($event)"  optionLabel="name"></p-dropdown>
+<p-dropdown [options]="estados" (ngModel)="estadoSeleccionado" optionLabel="name" ></p-dropdown>
+<p-dropdown [options]="tipoVacunas" (ngModel)="vacunaSeleccionada" optionLabel="name"></p-dropdown>
+
+<p-table [value]="empleadosBusquedaList">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>cedula</th>
+            <th>nombres</th>
+            <th>apellidos</th>
+            <th>email</th>
+            <th>estadoVacunacion</th>
+            
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-empleado>
+        <tr>
+            <td>{{empleado.cedula}}</td>
+            <td>{{empleado.nombres}}</td>
+            <td>{{empleado.apellidos}}</td>
+            <td>{{empleado.email}}</td>
+            <td>{{empleado.estadoVacunacion}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
